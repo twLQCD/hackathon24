@@ -21,15 +21,15 @@ int main ()
 	std::function<void(const GPUVector<T>&, GPUVector<T>&)> LU = LUPBCGPU<T, GPUVector<T>>;
 	std::function<void(const GPUVector<T>&, GPUVector<T>&, const T&)> DINV = DinvPBCGPU<T, GPUVector<T>>;
 	v.randn();
-	x.ones();
+	/*x.ones();
 	std::cout << std::sqrt(v.norm2()) << std::endl;
 	setEqualTo<T, GPUVector<T>>(x,v,v.size);
 	std::cout << std::sqrt(v.norm2()) << std::endl;
 	v.randn();
 	std::cout << std::sqrt(v.norm2()) << std::endl;
 	v = x;
-	std::cout << std::sqrt(v.norm2()) << std::endl;
-/*	T shift = 1e-3;
+	std::cout << std::sqrt(v.norm2()) << std::endl; */
+	T shift = 1e-3;
 	GPUSmootherPBC<T> s(LU,DINV,A,shift,100,1e-6);
 
 	T start;
